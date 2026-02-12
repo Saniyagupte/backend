@@ -1,4 +1,4 @@
-#!E:\neuro_demo_system\venv\Scripts\python.exe
+#!E:\neuro_demo_system\BE\venv\Scripts\python.exe
 
 """Takes a badly formatted SRT file and outputs a strictly valid one."""
 

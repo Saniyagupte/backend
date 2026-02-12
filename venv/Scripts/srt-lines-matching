@@ -1,4 +1,4 @@
-#!E:\neuro_demo_system\venv\Scripts\python.exe
+#!E:\neuro_demo_system\BE\venv\Scripts\python.exe
 
 """Filter subtitles that match or don't match a particular pattern."""
 
