@@ -1,0 +1,27 @@
+api_keys:
+  openrouteservice: "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6ImZjYWI2MTEwNGNhODQ2OGU4ZTY0NDFkNzMwNjM2NTU4IiwiaCI6Im11cm11cjY0In0="        # directions, geocoding
+  opencage: "e999429391da45d1ac0e789b79122d1e"           # geocoding (optional alternative)
+  overpass: ""                                 # no API key needed
+  maptiler: "JG2LiCtJZEaKlrL9hvA6"           # map tiles (optional)
+  openweather: "77f6d7fc0576edb4a5f61d4dc57b93c6"
+  GEOAPIFY_API_KEY : "ff4960d99d1846ecb2f1b6a15d7629c6"
+weights:
+  duration: 0.3
+  num_turns: 0.2
+  traffic: 0.2
+  complexity: 0.1
+  sensory: 0.1
+  familiarity: -0.2
+  weather: 0.05
+  road_quality: 0.05
+
+stress_threshold: 0.7
+
+route:
+  weights:
+    complexity: 0.2
+    sensory: 0.2
+    road_quality: 0.2
+    weather: 0.2
+    familiarity: 0.2
+  max_acceptable_distance_km: 1.3  # e.g. 30% longer than fastest route

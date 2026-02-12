@@ -1,0 +1,14 @@
+TTS
+librosa
+soundfile
+numpy
+scipy
+pydub
+
+numpy>=1.21
+soundfile>=0.11
+vosk>=0.3.45
+opensmile>=1.0.3
+scipy>=1.7
+pandas>=1.3
+
