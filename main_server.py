@@ -54,10 +54,6 @@ class RouteRequest(BaseModel):
 @app.post("/get_route")
 def get_route(data: RouteRequest):
 
-    # get last stress from memory
-
-    print("Using stress:", stress_level)
-
     best_route = plan_route(
         user_id=data.user_id,
         start=data.source,
