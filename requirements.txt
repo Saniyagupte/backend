@@ -23,3 +23,8 @@ transformers==5.1.0
 TTS==0.22.0
 uvicorn==0.40.0
 voice_processor==0.0.8
+gTTS==2.5.4
+pydub==0.25.1
+SpeechRecognition==3.14.5
+requests==2.32.5
+colorama==0.4.6
