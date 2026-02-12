@@ -19,7 +19,7 @@ sys.path.append(str(RELAX_AGENT.resolve()))
 sys.path.append(str(ROUTE_AGENT.resolve()))
 
 # -------- IMPORT AGENTS --------
-from main import plan_route                # route_agent/src/main.py
+from route_agent.src.main import plan_route                # route_agent/src/main.py
 from voice_processor import process_audio  # voice_agent
 from relax_engine import analyze_stress    # relaxation_agent
 
