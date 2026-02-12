@@ -14,22 +14,8 @@ import polyline
 from pathlib import Path
 import yaml
 from geopy.geocoders import Nominatim
-from geopy.extra.rate_limiter import RateLimiter
-from geopy.exc import GeocoderServiceError
 
-# Initialize geolocator
-geolocator = Nominatim(
-    user_agent="neuro_route_agent",
-    timeout=10
-)
-
-# Add rate limiter (1 second delay between requests)
-geocode = RateLimiter(
-    geolocator.geocode,
-    min_delay_seconds=1,
-    swallow_exceptions=False
-)
-
+geolocator = Nominatim(user_agent="neuro_route_agent")
 
 BASE_DIR = Path(__file__).resolve().parent
 config_path = BASE_DIR.parent / "config" / "config.yaml"
@@ -38,17 +24,14 @@ config_path = BASE_DIR.parent / "config" / "config.yaml"
 with open(config_path) as f:
     config = yaml.safe_load(f)
 
+import requests
+from utils.logger import logger
+
 def normalize_location(location: str) -> str:
     """
-    Accepts:
-    - 'Pune Railway Station'
-    - '18.52,73.85'
-
-    Always returns:
-    - 'lat,lon'
+    Converts a place name or coordinates to 'lat,lon' format using Geoapify.
     """
-
-    # already coordinates
+    # If already coordinates
     if "," in location:
         parts = location.split(",")
         if len(parts) == 2:
@@ -59,17 +42,25 @@ def normalize_location(location: str) -> str:
             except ValueError:
                 pass
 
-    # geocode string (with rate limiting)
+    # Use Geoapify geocoding
+    GEOAPIFY_API_KEY = config["api_keys"]["GEOAPIFY_API_KEY"]
+    url = f"https://api.geoapify.com/v1/geocode/search?text={location}&apiKey={GEOAPIFY_API_KEY}"
+
     try:
-        loc = geocode(location)
-    except GeocoderServiceError as e:
-        logger.error(f"Geocoding service error: {e}")
+        resp = requests.get(url, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+    except requests.RequestException as e:
+        logger.error(f"Geoapify request failed: {e}")
         raise ValueError("Geocoding service unavailable. Try again later.")
 
-    if not loc:
+    features = data.get("features")
+    if not features:
         raise ValueError(f"Could not geocode location: {location}")
 
-    return f"{loc.latitude},{loc.longitude}"
+    lat = features[0]["properties"]["lat"]
+    lon = features[0]["properties"]["lon"]
+    return f"{lat},{lon}"
 
 
 

@@ -2107,3 +2107,724 @@
 2026-02-11 20:31:02,473 - INFO - Route 2 | Score: 0.57 | Complexity: 0.53 | Sensory: 0.61 | Weather: 0.40
 2026-02-11 20:31:26,570 - INFO - Route 3 | Score: 0.57 | Complexity: 0.56 | Sensory: 0.61 | Weather: 0.40
 2026-02-11 20:31:26,575 - INFO - Best route selected with score 0.55
+2026-02-13 00:24:00,412 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:24:00,447 - WARNING - RateLimiter caught an error, retrying (0/2 tries). Called with (*('shivaji statue kothrud pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:24:05,748 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:24:05,759 - WARNING - RateLimiter caught an error, retrying (1/2 tries). Called with (*('shivaji statue kothrud pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:24:11,214 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:24:11,231 - ERROR - Geocoding service error: Non-successful status code 509
+2026-02-13 00:24:11,265 - ERROR - Geocoding service unavailable. Try again later.
+2026-02-13 00:28:18,074 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:28:18,076 - WARNING - RateLimiter caught an error, retrying (0/2 tries). Called with (*('shivaji statue kothrud pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:28:23,263 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:28:23,277 - WARNING - RateLimiter caught an error, retrying (1/2 tries). Called with (*('shivaji statue kothrud pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:28:28,482 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:28:28,484 - ERROR - Geocoding service error: Non-successful status code 509
+2026-02-13 00:28:28,485 - ERROR - Geocoding service unavailable. Try again later.
+2026-02-13 00:32:33,979 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:32:34,003 - WARNING - RateLimiter caught an error, retrying (0/2 tries). Called with (*('shivaji statue kothrud pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:32:41,004 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:32:41,051 - WARNING - RateLimiter caught an error, retrying (1/2 tries). Called with (*('shivaji statue kothrud pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:32:46,850 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:32:46,850 - ERROR - Geocoding service error: Non-successful status code 509
+2026-02-13 00:32:46,851 - ERROR - Geocoding service unavailable. Try again later.
+2026-02-13 00:34:10,235 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:34:10,238 - WARNING - RateLimiter caught an error, retrying (0/2 tries). Called with (*('shivaji statue kothrud pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:34:15,623 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:34:15,626 - WARNING - RateLimiter caught an error, retrying (1/2 tries). Called with (*('shivaji statue kothrud pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:34:20,952 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:34:20,957 - ERROR - Geocoding service error: Non-successful status code 509
+2026-02-13 00:34:20,966 - ERROR - Geocoding service unavailable. Try again later.
+2026-02-13 00:38:09,925 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:38:09,926 - WARNING - RateLimiter caught an error, retrying (0/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:38:15,084 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:38:15,087 - WARNING - RateLimiter caught an error, retrying (1/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:38:20,312 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:38:20,353 - ERROR - Geocoding service error: Non-successful status code 509
+2026-02-13 00:38:20,354 - ERROR - Geocoding service unavailable. Try again later.
+2026-02-13 00:39:55,477 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:39:55,479 - WARNING - RateLimiter caught an error, retrying (0/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:40:00,647 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:40:00,650 - WARNING - RateLimiter caught an error, retrying (1/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:40:05,808 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:40:05,814 - ERROR - Geocoding service error: Non-successful status code 509
+2026-02-13 00:40:05,816 - ERROR - Geocoding service unavailable. Try again later.
+2026-02-13 00:42:57,050 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:42:57,065 - WARNING - RateLimiter caught an error, retrying (0/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:43:02,680 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:43:02,713 - WARNING - RateLimiter caught an error, retrying (1/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:43:08,505 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:43:08,517 - ERROR - Geocoding service error: Non-successful status code 509
+2026-02-13 00:43:08,533 - ERROR - Geocoding service unavailable. Try again later.
+2026-02-13 00:45:19,268 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:45:19,287 - WARNING - RateLimiter caught an error, retrying (0/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:45:25,314 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:45:25,316 - WARNING - RateLimiter caught an error, retrying (1/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:45:31,358 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:45:31,359 - ERROR - Geocoding service error: Non-successful status code 509
+2026-02-13 00:45:31,361 - ERROR - Geocoding service unavailable. Try again later.
+2026-02-13 00:47:04,536 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:47:04,563 - WARNING - RateLimiter caught an error, retrying (0/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:47:10,063 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:47:10,065 - WARNING - RateLimiter caught an error, retrying (1/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:47:16,410 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:47:16,414 - ERROR - Geocoding service error: Non-successful status code 509
+2026-02-13 00:47:16,418 - ERROR - Geocoding service unavailable. Try again later.
+2026-02-13 00:49:04,237 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:49:04,243 - WARNING - RateLimiter caught an error, retrying (0/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:49:09,638 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:49:09,641 - WARNING - RateLimiter caught an error, retrying (1/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:49:15,582 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:49:16,108 - ERROR - Geocoding service error: Non-successful status code 509
+2026-02-13 00:49:16,473 - ERROR - Geocoding service unavailable. Try again later.
+2026-02-13 00:49:18,995 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:49:19,008 - WARNING - RateLimiter caught an error, retrying (0/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:49:24,714 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:49:24,715 - WARNING - RateLimiter caught an error, retrying (1/2 tries). Called with (*('shivaji statue kothrud, pune',), **{}).
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 368, in _call_geocoder
+    result = self.adapter.get_json(url, timeout=timeout, headers=req_headers)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 472, in get_json
+    resp = self._request(url, timeout=timeout, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\adapters.py", line 500, in _request
+    raise AdapterHTTPError(
+geopy.adapters.AdapterHTTPError: Non-successful status code 509
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 136, in _retries_gen
+    yield i  # Run the function.
+    ^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\extra\rate_limiter.py", line 274, in __call__
+    res = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\nominatim.py", line 297, in geocode
+    return self._call_geocoder(url, callback, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 388, in _call_geocoder
+    res = self._adapter_error_handler(error)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\neuro_demo_system\BE\venv\Lib\site-packages\geopy\geocoders\base.py", line 411, in _adapter_error_handler
+    raise exc_cls(str(error)) from error
+geopy.exc.GeocoderServiceError: Non-successful status code 509
+2026-02-13 00:49:30,161 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 00:49:30,182 - ERROR - Geocoding service error: Non-successful status code 509
+2026-02-13 00:49:30,184 - ERROR - Geocoding service unavailable. Try again later.
+2026-02-13 00:53:35,291 - INFO - Received an HTTP error (509): 509 Bandwidth Limit Exceeded
+2026-02-13 01:00:15,977 - INFO - Using coordinates: 18.5445393,73.8284233 -> 18.50185355,73.83279776028454
+2026-02-13 01:01:20,494 - INFO - Route 1 | Score: 0.59 | Complexity: 0.51 | Sensory: 0.76 | Weather: 0.40
+2026-02-13 01:02:20,299 - INFO - Route 2 | Score: 0.62 | Complexity: 0.52 | Sensory: 0.86 | Weather: 0.40
+2026-02-13 01:03:20,394 - INFO - Route 3 | Score: 0.62 | Complexity: 0.53 | Sensory: 0.86 | Weather: 0.40
+2026-02-13 01:03:20,402 - INFO - Best route selected with score 0.59
