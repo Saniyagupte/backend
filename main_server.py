@@ -20,8 +20,8 @@ sys.path.append(str(ROUTE_AGENT.resolve()))
 
 # -------- IMPORT AGENTS --------
 from route_agent.src.main import plan_route                # route_agent/src/main.py
-from voice_processor import process_audio  # voice_agent
-from relax_engine import analyze_stress    # relaxation_agent
+# from voice_processor import process_audio  # voice_agent
+# from relax_engine import analyze_stress    # relaxation_agent
 
 # -------- APP INIT --------
 app = FastAPI(title="NeuroDrive AI Backend")
@@ -55,11 +55,6 @@ class RouteRequest(BaseModel):
 def get_route(data: RouteRequest):
 
     # get last stress from memory
-    try:
-        from relax_memory import get_user_stress
-        stress_level = get_user_stress(data.user_id)
-    except:
-        stress_level = 0.3
 
     print("Using stress:", stress_level)
 
@@ -67,7 +62,6 @@ def get_route(data: RouteRequest):
         user_id=data.user_id,
         start=data.source,
         destination=data.destination,
-        stress_level=stress_level
     )
 
     if not best_route:
@@ -78,48 +72,47 @@ def get_route(data: RouteRequest):
     return {
         "status": "success",
         "route": coords,
-        "stress_used": stress_level
     }
 
-# =========================================
-# 🎤 VOICE REQUEST MODEL
-# =========================================
-class VoiceRequest(BaseModel):
-    user_id: str
-    audio_path: str   # path inside backend server
+# # =========================================
+# # 🎤 VOICE REQUEST MODEL
+# # =========================================
+# class VoiceRequest(BaseModel):
+#     user_id: str
+#     audio_path: str   # path inside backend server
 
-# =========================================
-# 🧠 VOICE → STRESS → RELAX ENDPOINT
-# =========================================
-@app.post("/process_voice")
-def process_voice(data: VoiceRequest):
+# # =========================================
+# # 🧠 VOICE → STRESS → RELAX ENDPOINT
+# # =========================================
+# @app.post("/process_voice")
+# def process_voice(data: VoiceRequest):
 
-    print("Voice received from:", data.user_id)
+#     print("Voice received from:", data.user_id)
 
-    # ---- STEP 1: Voice to text + features ----
-    voice_out = process_audio(data.audio_path)
+#     # ---- STEP 1: Voice to text + features ----
+#     voice_out = process_audio(data.audio_path)
 
-    text = voice_out.get("text", "")
-    features = voice_out.get("features", {})
+#     text = voice_out.get("text", "")
+#     features = voice_out.get("features", {})
 
-    print("Recognized text:", text)
+#     print("Recognized text:", text)
 
-    # ---- STEP 2: Stress analysis ----
-    relax = analyze_stress(text, features, data.user_id)
+#     # ---- STEP 2: Stress analysis ----
+#     relax = analyze_stress(text, features, data.user_id)
 
-    stress = relax.get("stress_score", 0)
-    emotion = relax.get("emotion", "neutral")
-    coping = relax.get("coping_text", "")
-    voice_style = relax.get("voice_style", "neutral")
+#     stress = relax.get("stress_score", 0)
+#     emotion = relax.get("emotion", "neutral")
+#     coping = relax.get("coping_text", "")
+#     voice_style = relax.get("voice_style", "neutral")
 
-    print("Stress:", stress)
-    print("Coping:", coping)
+#     print("Stress:", stress)
+#     print("Coping:", coping)
 
-    return {
-        "status": "processed",
-        "text": text,
-        "emotion": emotion,
-        "stress": stress,
-        "coping": coping,
-        "voice_style": voice_style
-    }
+#     return {
+#         "status": "processed",
+#         "text": text,
+#         "emotion": emotion,
+#         "stress": stress,
+#         "coping": coping,
+#         "voice_style": voice_style
+#     }
