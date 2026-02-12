@@ -14,8 +14,22 @@ import polyline
 from pathlib import Path
 import yaml
 from geopy.geocoders import Nominatim
+from geopy.extra.rate_limiter import RateLimiter
+from geopy.exc import GeocoderServiceError
 
-geolocator = Nominatim(user_agent="neuro_route_agent")
+# Initialize geolocator
+geolocator = Nominatim(
+    user_agent="neuro_route_agent",
+    timeout=10
+)
+
+# Add rate limiter (1 second delay between requests)
+geocode = RateLimiter(
+    geolocator.geocode,
+    min_delay_seconds=1,
+    swallow_exceptions=False
+)
+
 
 BASE_DIR = Path(__file__).resolve().parent
 config_path = BASE_DIR.parent / "config" / "config.yaml"
@@ -45,12 +59,18 @@ def normalize_location(location: str) -> str:
             except ValueError:
                 pass
 
-    # geocode string
-    loc = geolocator.geocode(location)
+    # geocode string (with rate limiting)
+    try:
+        loc = geocode(location)
+    except GeocoderServiceError as e:
+        logger.error(f"Geocoding service error: {e}")
+        raise ValueError("Geocoding service unavailable. Try again later.")
+
     if not loc:
         raise ValueError(f"Could not geocode location: {location}")
 
     return f"{loc.latitude},{loc.longitude}"
+
 
 
 # Initialize components
