@@ -1,68 +1,125 @@
 import sys
 from pathlib import Path
 
-# --- Paths ---
-BASE_DIR = Path(__file__).resolve().parent
-ROUTE_AGENT_SRC = BASE_DIR / "route_agent" / "src"
-sys.path.append(str(ROUTE_AGENT_SRC))
-
-# --- FastAPI imports ---
+# -------- FASTAPI --------
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import polyline
 
-# --- Import your route planner ---
-from main import plan_route
+# -------- PATH SETUP --------
+BASE_DIR = Path(__file__).resolve().parent
 
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi import FastAPI
+VOICE_AGENT = BASE_DIR / "voice_agent"
+RELAX_AGENT = BASE_DIR / "relaxation_agent"
+ROUTE_AGENT = BASE_DIR / "route_agent" / "src"
 
-app = FastAPI()
+sys.path.append(str(VOICE_AGENT.resolve()))
+sys.path.append(str(RELAX_AGENT.resolve()))
+sys.path.append(str(ROUTE_AGENT.resolve()))
 
-# ----- CORS Setup -----
-origins = [
-    "http://localhost:54222",  # your Flutter Web local URL
-    "http://127.0.0.1:54222",  # alternative localhost URL
-    "*"  # ⚠️ for testing only, allow all origins
-]
+# -------- IMPORT AGENTS --------
+from main import plan_route                # route_agent/src/main.py
+from voice_processor import process_audio  # voice_agent
+from relax_engine import analyze_stress    # relaxation_agent
 
+# -------- APP INIT --------
+app = FastAPI(title="NeuroDrive AI Backend")
+
+# -------- CORS (IMPORTANT) --------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # or ["*"] for testing
+    allow_origins=["*"],   # allow all for now (mobile testing)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Optional: show the paths
-config_path = BASE_DIR / "route_agent" / "config" / "config.yaml"
-print("Config path being used:", config_path)
+# -------- ROOT TEST --------
+@app.get("/")
+def home():
+    return {"status": "Backend running successfully"}
 
-# --- Request schema ---
+# =========================================
+# 📍 ROUTE REQUEST MODEL
+# =========================================
 class RouteRequest(BaseModel):
     user_id: str
     source: str
     destination: str
 
-# --- API endpoint ---
+# =========================================
+# 🧭 ROUTE ENDPOINT
+# =========================================
 @app.post("/get_route")
 def get_route(data: RouteRequest):
-    print("Route request received")
-    print(data)
+
+    # get last stress from memory
+    try:
+        from relax_memory import get_user_stress
+        stress_level = get_user_stress(data.user_id)
+    except:
+        stress_level = 0.3
+
+    print("Using stress:", stress_level)
 
     best_route = plan_route(
         user_id=data.user_id,
         start=data.source,
-        destination=data.destination
+        destination=data.destination,
+        stress_level=stress_level
     )
 
     if not best_route:
         return {"status": "error", "message": "No route found"}
 
-    # decode polyline to coordinates
     coords = polyline.decode(best_route["geometry"])
 
     return {
         "status": "success",
-        "route": coords
+        "route": coords,
+        "stress_used": stress_level
+    }
+
+# =========================================
+# 🎤 VOICE REQUEST MODEL
+# =========================================
+class VoiceRequest(BaseModel):
+    user_id: str
+    audio_path: str   # path inside backend server
+
+# =========================================
+# 🧠 VOICE → STRESS → RELAX ENDPOINT
+# =========================================
+@app.post("/process_voice")
+def process_voice(data: VoiceRequest):
+
+    print("Voice received from:", data.user_id)
+
+    # ---- STEP 1: Voice to text + features ----
+    voice_out = process_audio(data.audio_path)
+
+    text = voice_out.get("text", "")
+    features = voice_out.get("features", {})
+
+    print("Recognized text:", text)
+
+    # ---- STEP 2: Stress analysis ----
+    relax = analyze_stress(text, features, data.user_id)
+
+    stress = relax.get("stress_score", 0)
+    emotion = relax.get("emotion", "neutral")
+    coping = relax.get("coping_text", "")
+    voice_style = relax.get("voice_style", "neutral")
+
+    print("Stress:", stress)
+    print("Coping:", coping)
+
+    return {
+        "status": "processed",
+        "text": text,
+        "emotion": emotion,
+        "stress": stress,
+        "coping": coping,
+        "voice_style": voice_style
     }
