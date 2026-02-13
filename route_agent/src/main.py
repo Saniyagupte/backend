@@ -89,9 +89,11 @@ def sample_coordinates(coords, n=5):
 # --- Main route planning function ---
 from tabulate import tabulate  # add at the top of your file
 
-def plan_route(user_id, start, destination):
-
-    # --- normalize inputs (STRING → COORDS) ---
+def plan_route(user_id, start, destination, condition="adhd"):
+    """
+    condition: 'autism' or 'adhd'
+    """
+    # --- normalize inputs ---
     try:
         start_coords = normalize_location(start)
         destination_coords = normalize_location(destination)
@@ -100,12 +102,10 @@ def plan_route(user_id, start, destination):
         return None
 
     logger.info(f"Using coordinates: {start_coords} -> {destination_coords}")
+    logger.info(f"User condition: {condition}")
 
     # --- fetch routes ---
-    routes = fetcher.fetch_all_routes(
-        start_coords,
-        destination_coords
-    )
+    routes = fetcher.fetch_all_routes(start_coords, destination_coords)
 
     if not routes:
         logger.error("No routes found.")
@@ -117,24 +117,30 @@ def plan_route(user_id, start, destination):
     table_data = []
 
     for idx, route in enumerate(routes, start=1):
-        complexity_score = complexity_analyzer.calculate(route)
-
+        # --- Always calculate common scores ---
         coordinates = polyline.decode(route["geometry"])
         coordinates = sample_coordinates(coordinates, n=5)
 
-        weather_scores = [
-            weather_fetcher.get_weather_impact(lat, lon)
-            for lat, lon in coordinates
-        ]
+        weather_scores = [weather_fetcher.get_weather_impact(lat, lon) for lat, lon in coordinates]
         weather_score = max(weather_scores)
 
         familiarity_score = familiarity.get_score(user_id, route)
         stress_level = stress_listener.get_stress_level(user_id)
         road_quality_score = 0.7  # placeholder
 
-        locations = [f"{lat},{lng}" for lat, lng in coordinates]
-        sensory_score = places.get_sensory_score_for_route(locations)
+        # --- Conditional scores based on user condition ---
+        if condition == "autism":
+            complexity_score = 0  # ignore complexity
+            sensory_score = places.get_sensory_score_for_route([f"{lat},{lng}" for lat, lng in coordinates])
+        elif condition == "adhd":
+            complexity_score = complexity_analyzer.calculate(route)
+            sensory_score = 0  # ignore sensory
+        else:
+            # default fallback
+            complexity_score = complexity_analyzer.calculate(route)
+            sensory_score = places.get_sensory_score_for_route([f"{lat},{lng}" for lat, lng in coordinates])
 
+        # --- Compute final score using RouteScorer ---
         score = scorer.score(
             complexity=complexity_score,
             sensory=sensory_score,
@@ -167,12 +173,9 @@ def plan_route(user_id, start, destination):
             best_sensory = sensory_score
 
     if table_data:
+        from tabulate import tabulate
         print("\n=== Route Score Summary ===")
-        headers = [
-            "Route #", "Total Score", "Complexity",
-            "Sensory", "Road Quality", "Weather",
-            "Familiarity", "Stress"
-        ]
+        headers = ["Route #", "Total Score", "Complexity", "Sensory", "Road Quality", "Weather", "Familiarity", "Stress"]
         print(tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
 
     if best_route:

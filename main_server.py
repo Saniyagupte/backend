@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import polyline
+from enum import Enum
 
 # -------- PATH SETUP --------
 BASE_DIR = Path(__file__).resolve().parent
@@ -35,6 +36,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+class ConditionEnum(str, Enum):
+    autism = "autism"
+    adhd = "adhd"
+
+
 # -------- ROOT TEST --------
 @app.get("/")
 def home():
@@ -47,6 +53,7 @@ class RouteRequest(BaseModel):
     user_id: str
     source: str
     destination: str
+    condition: ConditionEnum
 
 # =========================================
 # 🧭 ROUTE ENDPOINT
@@ -58,6 +65,7 @@ def get_route(data: RouteRequest):
         user_id=data.user_id,
         start=data.source,
         destination=data.destination,
+        condition=data.condition.value,  # Pass as string
     )
 
     if not best_route:
@@ -69,6 +77,7 @@ def get_route(data: RouteRequest):
         "status": "success",
         "route": coords,
     }
+
 
 # # =========================================
 # # 🎤 VOICE REQUEST MODEL
